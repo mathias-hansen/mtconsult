@@ -1,0 +1,26 @@
+{
+  "name": "slider-polymer",
+  "version": "0.0.3",
+  "authors": [
+    "Ricard Sole <ricard.solecasas@gmail.com>"
+  ],
+  "description": "A customizable slider using web components (Polymer.js) without jQuery",
+  "main": "main.js",
+  "keywords": [
+    "slider",
+    "polymer",
+    "web-components",
+    "web-component",
+    "vanilla-js"
+  ],
+  "license": "none",
+  "homepage": "https://github.com/rcsole/slider-polymer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.3"
+  }
+}
