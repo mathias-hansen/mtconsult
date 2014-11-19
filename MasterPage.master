@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/master.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <header>
+                <div class="top">
+                    <h1><a href="/home">MtConsult</a></h1>
+                    <div class="search">
+                        <asp:TextBox ID="txtSearch" placeholder="find produkter... " runat="server" />
+                        <asp:ImageButton ID="btnSearch" ImageUrl="/img/search.png" runat="server" />
+                        <a href="/how-to-buy">How To Buy</a>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/home"><img src="img/home.png" /></a></li>
+                        <li><a href="/om-os">Om os</a></li>
+                        <li><a href="/kategorier">Kategorier</a></li>
+                        <li><a href="/produkter">Produkter</a></li>
+                        <li><a href="/support">Support</a></li>
+                        <li><a href="/partnere">Partnere</a></li>
+                        <li><a href="/docs">Dokumenter</a></li>
+                        <li><a href="/nyheder">Nyheder & Begivenheder</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
