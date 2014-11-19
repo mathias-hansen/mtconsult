@@ -1,0 +1,20 @@
+<polymer-element name="slider-component">
+  <template>
+    <link rel="stylesheet" href="style.min.css">
+
+    <div id="container">
+      <div data-img="left" on-tap="{{ slide }}" class="controls accent" id="left"></div>
+      <div data-img="right" on-tap="{{ slide }}" class="controls accent" id="right"></div>
+
+      <ul id="bullets" class="controls">
+        <template repeat="{{ image, index in images }}">
+          <li>
+            <a on-tap="{{ slide }}" class="bullet accent" data-img="{{ index }}" href="javascript:;"></a>
+          </li>
+        </template>
+      </ul>
+    </div>
+
+  </template>
+  <script type="text/javascript" src="main.min.js"></script>
+</polymer-element>
