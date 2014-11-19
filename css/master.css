@@ -109,17 +109,19 @@ body .wrapper .first {
   display: flex;
   margin-top: 50px;
 }
-body .wrapper .first div {
+body .wrapper .first .vicon,
+body .wrapper .first .productSelector {
   width: 50%;
   height: 172px;
   padding: 1em;
   color: white;
 }
-body .wrapper .first div p {
+body .wrapper .first .vicon p,
+body .wrapper .first .productSelector p {
   width: 50%;
   color: rgba(255, 255, 255, 0.7);
 }
-body .wrapper .first div:first-child {
+body .wrapper .first .vicon {
   -moz-border-radius: 3px 0 0 3px;
   -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
@@ -127,8 +129,37 @@ body .wrapper .first div:first-child {
   background-size: contain;
   border-right: 1px solid black;
 }
-body .wrapper .first div:last-child {
+body .wrapper .first .productSelector {
   -moz-border-radius: 0 3px 3px 0;
   -webkit-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
+  background: url(../img/product-selector-tool.jpg);
+  background-size: cover;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: flex-end;
+}
+body .wrapper .first .productSelector p {
+  margin: 45px 6px 0 0;
+}
+body .wrapper .first .productSelector div {
+  margin-top: 85px;
+  width: 100%;
+}
+body .wrapper .first .productSelector div select {
+  position: relative;
+  top: -9px;
+  padding: 4px;
+  border: none;
+  width: 152px;
+  margin-right: 2em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+body .wrapper .first .productSelector div input[type=image] {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }

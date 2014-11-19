@@ -11,13 +11,22 @@
         <img src="/slider/images/alliance-pro.jpg" alt="" />
     </slider-component>
     <div class="first">
-        <div>
+        <div class="vicon">
             <h3>Get To Know Vicon</h3>
             <p>An industry-leading provider of complete, IP-based security solutions for nearly 50 years.</p>
             <a href="http://www.vicon-security.com/" target="_blank"><img src="img/learn-more.jpg" width="114" height="27" alt="Learn More"></a>
         </div>
-        <div>
-
+        <div class="productSelector">
+            <p>Allow us to assist you in finding the perfect IQeye camera for any application.</p>
+            <div>
+                <select>
+                    <option>Kamera Type</option>
+                </select>
+                <select>
+                    <option>Opløsning</option>
+                </select>
+                <asp:ImageButton ImageUrl="/img/compare.jpg" runat="server" />
+            </div>
         </div>
     </div>
 </asp:Content>

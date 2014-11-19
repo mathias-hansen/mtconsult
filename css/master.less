@@ -121,7 +121,7 @@
             display: flex;
             margin-top: 50px;
 
-            div {
+            .vicon, .productSelector {
                 width: 50%;
                 height: 172px;
                 padding: 1em;
@@ -133,20 +133,53 @@
                 }
             }
 
-                div:first-child {
-                    -moz-border-radius: 3px 0 0 3px;
-                    -webkit-border-radius: 3px 0 0 3px;
-                    border-radius: 3px 0 0 3px;
-                    background: url(../img/get-to-know-vicon.jpg);
-                    background-size: contain;
-                    border-right: 1px solid black;
+            .vicon {
+                -moz-border-radius: 3px 0 0 3px;
+                -webkit-border-radius: 3px 0 0 3px;
+                border-radius: 3px 0 0 3px;
+                background: url(../img/get-to-know-vicon.jpg);
+                background-size: contain;
+                border-right: 1px solid black;
+            }
+
+            .productSelector {
+                -moz-border-radius: 0 3px 3px 0;
+                -webkit-border-radius: 0 3px 3px 0;
+                border-radius: 0 3px 3px 0;
+                background: url(../img/product-selector-tool.jpg);
+                background-size: cover;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                align-items: flex-end;
+
+                p {
+                    margin: 45px 6px 0 0;
                 }
 
-                div:last-child {
-                    -moz-border-radius: 0 3px 3px 0;
-                    -webkit-border-radius: 0 3px 3px 0;
-                    border-radius: 0 3px 3px 0;
+                div {
+                    margin-top: 85px;
+                    width: 100%;
+
+                    select {
+                        position: relative;
+                        top: -9px;
+                        padding: 4px;
+                        border: none;
+                        width: 152px;
+                        margin-right: 2em;
+                        -moz-border-radius: 3px;
+                        -webkit-border-radius: 3px;
+                        border-radius: 3px;
+                    }
+
+                    input[type=image] {
+                        -moz-border-radius: 3px;
+                        -webkit-border-radius: 3px;
+                        border-radius: 3px;
+                    }
                 }
+            }
         }
     }
 }
