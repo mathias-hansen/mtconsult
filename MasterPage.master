@@ -23,7 +23,8 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="/home"><img src="img/home.png" /></a></li>
+                        <li><a href="/home">
+                            <img src="img/home.png" /></a></li>
                         <li><a href="/om-os">Om os</a></li>
                         <li><a href="/kategorier">Kategorier</a></li>
                         <li><a href="/produkter">Produkter</a></li>
@@ -38,9 +39,22 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
-            <div class="footer">
-                <ul><!-- pages--></ul>
-                <ul><!-- subpages--></ul>
+        </div>
+        <div class="footer">
+            <ul class="pages">
+                <li><a href="/om-os">Om os</a></li>
+                <li><a href="/kategorier">Kategorier</a></li>
+                <li><a href="/produkter">Produkter</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/partnere">Partnere</a></li>
+                <li><a href="/docs">Dokumenter</a></li>
+                <li><a href="/nyheder">Nyheder & Begivenheder</a></li>
+            </ul>
+            <ul>
+                <!-- subpages-->
+            </ul>
+            <div class="copy">
+                Copyright © 2014 MtConsult | All Rights Reserved
             </div>
         </div>
     </form>

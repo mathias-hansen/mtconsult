@@ -14,7 +14,7 @@
         <div class="vicon">
             <h3>Get To Know Vicon</h3>
             <p>An industry-leading provider of complete, IP-based security solutions for nearly 50 years.</p>
-            <a href="http://www.vicon-security.com/" target="_blank"><img src="img/learn-more.jpg" width="114" height="27" alt="Learn More"></a>
+            <a href="http://www.vicon-security.com/" target="_blank">Læs Mere</a>
         </div>
         <div class="productSelector">
             <p>Allow us to assist you in finding the perfect IQeye camera for any application.</p>
@@ -25,8 +25,19 @@
                 <select>
                     <option>Opløsning</option>
                 </select>
-                <asp:ImageButton ImageUrl="/img/compare.jpg" runat="server" />
+                <a href="/?">Sammenlign</a>
             </div>
+        </div>
+    </div>
+    <div class="secound">
+        <div class="advantage">
+            <div class="buttons">
+                <a href="http://www.iqeye.com/resources/iqadvantages"><img src="img/iqadvantages.png" alt="Iq Advantages" /></a><a href="/nyheder">Nyheder</a>
+            </div>
+            <p>Home of IQeye H.264 and MJPEG HD Megapixel IP cameras. Leading the high-resolution and network camera industry since 1998, we offer complete surveillance camera systems, including day/night, vandal-resistant, and weatherproof IP cameras.</p>
+        </div>
+        <div class="resources">
+            <a href="http://www.iqeye.com/sites/all/themes/iqinvision/images/learn-more-gray.png">Learn More</a>
         </div>
     </div>
 </asp:Content>
