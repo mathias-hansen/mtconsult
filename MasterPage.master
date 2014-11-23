@@ -4,8 +4,31 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>MtConsult</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="192x192" href="img/icons/chrome-touch-icon-192x192.png" />
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit" />
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/icons/ms-touch-icon-144x144-precomposed.png" />
+    <meta name="msapplication-TileColor" content="#3372DF" />
+
     <link href="css/master.min.css" rel="stylesheet" />
+    <link rel="import" href="bower_components/polymer/polymer.html" />
+    <script src="bower_components/platform/platform.js"></script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -14,7 +37,7 @@
         <div class="wrapper">
             <header>
                 <div class="top">
-                    <h1><a href="/home">MtConsult</a></h1>
+                    <h1><a href="/hjem">MtConsult</a></h1>
                     <div class="search">
                         <asp:TextBox ID="txtSearch" placeholder="find produkter... " runat="server" />
                         <asp:ImageButton ID="btnSearch" ImageUrl="/img/search.png" runat="server" />
@@ -23,8 +46,8 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="/home">
-                            <img src="img/home.png" /></a></li>
+                        <!-- set selected -->
+                        <li><a href="/hjem"><img src="img/home.png" /></a></li>
                         <li><a href="/om-os">Om os</a></li>
                         <li><a href="/kategorier">Kategorier</a></li>
                         <li><a href="/produkter">Produkter</a></li>
@@ -41,22 +64,60 @@
 
         </div>
         <div class="footer">
+            <!-- get subpages -->
             <ul class="pages">
-                <li><a href="/om-os">Om os</a></li>
-                <li><a href="/kategorier">Kategorier</a></li>
-                <li><a href="/produkter">Produkter</a></li>
-                <li><a href="/support">Support</a></li>
-                <li><a href="/partnere">Partnere</a></li>
-                <li><a href="/docs">Dokumenter</a></li>
-                <li><a href="/nyheder">Nyheder & Begivenheder</a></li>
-            </ul>
-            <ul>
-                <!-- subpages-->
+                <li>
+                    <ul>
+                        <li><a href="/om-os">Om os</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="/kategorier">Kategorier</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="/produkter">Produkter</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="/support">Support</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="/partnere">Partnere</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="/docs">Dokumenter</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="/nyheder">Nyheder & Begivenheder</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="copy">
                 Copyright © 2014 MtConsult | All Rights Reserved
             </div>
         </div>
     </form>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-57021675-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>
