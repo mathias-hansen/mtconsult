@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="bower_components/platform/platform.js"></script>
-    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link href="css/default.min.css" rel="stylesheet" />
     <link rel="import" href="slider/index.html">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <!-- get images -->
     <slider-component>
         <img src="/slider/images/alliance-mini-ii.jpg" alt="" />
         <img src="/slider/images/alliance-pro.jpg" alt="" />
@@ -17,7 +17,9 @@
             <a href="http://www.vicon-security.com/" target="_blank">Læs Mere</a>
         </div>
         <div class="productSelector">
+            <h3>Product Selector Tool</h3>
             <p>Allow us to assist you in finding the perfect IQeye camera for any application.</p>
+            <!-- get options -->
             <div>
                 <select>
                     <option>Kamera Type</option>

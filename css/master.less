@@ -25,6 +25,15 @@
                         color: white;
                         text-decoration: none;
                     }
+
+                        a:focus {
+                            outline: none;
+                            text-decoration: underline;
+                            -moz-transition: .3s;
+                            -o-transition: .3s;
+                            -webkit-transition: .3s;
+                            transition: .3s;
+                        }
                 }
 
                 .search {
@@ -108,196 +117,16 @@
                     li {
 
                         a {
-                            padding: 7px 1.5em 12px 1.5em;
+                            padding: 7px 31px 12px 0;
+                            font-size: 14px;
                             color: #fff;
                             text-decoration: none;
                             border-right: 1px solid black;
                         }
-                    }
-                }
-            }
-        }
-
-        .first {
-            display: flex;
-            margin: 50px 0 14px 0;
-
-            .vicon, .productSelector {
-                width: 50%;
-                height: 172px;
-                padding: 1em;
-                color: white;
-
-
-
-                p {
-                    width: 50%;
-                    color: rgba(255,255,255,0.7);
-                    margin-bottom: 22px;
-                }
-            }
-
-            .vicon {
-                -moz-border-radius: 3px 0 0 3px;
-                -webkit-border-radius: 3px 0 0 3px;
-                border-radius: 3px 0 0 3px;
-                background: url(../img/get-to-know-vicon.jpg);
-                background-size: contain;
-
-                h3 {
-                    font-weight: 100;
-                    font-size: 25px;
-                    margin: 15px 0;
-                }
-
-                a {
-                    color: white;
-                    text-decoration: none;
-                    background: #327c87;
-                    background: -moz-linear-gradient(top, #327c87 0%, #09343b 100%);
-                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#327c87), color-stop(100%,#09343b));
-                    background: -webkit-linear-gradient(top, #327c87 0%,#09343b 100%);
-                    background: -o-linear-gradient(top, #327c87 0%,#09343b 100%);
-                    background: -ms-linear-gradient(top, #327c87 0%,#09343b 100%);
-                    background: linear-gradient(to bottom, #327c87 0%,#09343b 100%);
-                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#327c87', endColorstr='#09343b',GradientType=0 );
-                    padding: 6px 24px;
-                    -moz-border-radius: 3px;
-                    -webkit-border-radius: 3px;
-                    border-radius: 3px;
-                }
-            }
-
-            .productSelector {
-                -moz-border-radius: 0 3px 3px 0;
-                -webkit-border-radius: 0 3px 3px 0;
-                border-radius: 0 3px 3px 0;
-                background: url(../img/product-selector-tool.jpg);
-                background-size: cover;
-                display: flex;
-                -ms-flex-direction: column;
-                flex-direction: column;
-                align-items: flex-end;
-
-                p {
-                    margin: 45px 6px 0 0;
-                }
-
-                div {
-                    margin-top: 74px;
-                    width: 100%;
-
-                    select {
-                        position: relative;
-                        top: -1px;
-                        padding: 4px;
-                        border: none;
-                        width: 151px;
-                        margin-right: 2em;
-                        -moz-border-radius: 3px;
-                        -webkit-border-radius: 3px;
-                        border-radius: 3px;
-                    }
-
-                    a {
-                        background: #22c2ce; /* Old browsers */
-                        background: -moz-linear-gradient(top, #22c2ce 0%, #038a9d 100%); /* FF3.6+ */
-                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#22c2ce), color-stop(100%,#038a9d)); /* Chrome,Safari4+ */
-                        background: -webkit-linear-gradient(top, #22c2ce 0%,#038a9d 100%); /* Chrome10+,Safari5.1+ */
-                        background: -o-linear-gradient(top, #22c2ce 0%,#038a9d 100%); /* Opera 11.10+ */
-                        background: -ms-linear-gradient(top, #22c2ce 0%,#038a9d 100%); /* IE10+ */
-                        background: linear-gradient(to bottom, #22c2ce 0%,#038a9d 100%); /* W3C */
-                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#22c2ce', endColorstr='#038a9d',GradientType=0 ); /* IE6-9 */
-                        color: white;
-                        padding: 4px 7px;
-                        text-decoration: none;
-                        -moz-border-radius: 3px;
-                        -webkit-border-radius: 3px;
-                        border-radius: 3px;
-                    }
-                }
-            }
-        }
-
-        .secound {
-            display: flex;
-
-            .advantage {
-                background: url(../img/iq-advantage.jpg);
-                background-size: cover;
-                width: 50%;
-                height: 204px;
-                -moz-border-radius: 3px 0 0 3px;
-                -webkit-border-radius: 3px 0 0 3px;
-                border-radius: 3px 0 0 3px;
-
-                .buttons {
-                    display: flex;
-                    justify-content: center;
-                    padding: 1.5em 0;
-
-                    a:first-child {
-                        height: 31px;
-
-                        img {
-                            height: 100%;
+                        a:hover {
+                            color: #00c1cb;
                         }
                     }
-
-                    a:last-child {
-                        background: #327c87;
-                        background: -moz-linear-gradient(top,#327c87 0%,#09343b 100%);
-                        background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#327c87),color-stop(100%,#09343b));
-                        background: -webkit-linear-gradient(top,#327c87 0%,#09343b 100%);
-                        background: -o-linear-gradient(top,#327c87 0%,#09343b 100%);
-                        background: -ms-linear-gradient(top,#327c87 0%,#09343b 100%);
-                        background: linear-gradient(to bottom,#327c87 0%,#09343b 100%);
-                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#327c87',endColorstr='#09343b',GradientType=0);
-                        color: white;
-                        padding: 6px 35px;
-                        -moz-border-radius: 0 3px 3px 0;
-                        -webkit-border-radius: 0 3px 3px 0;
-                        border-radius: 0 3px 3px 0;
-                        text-decoration: none;
-                    }
-                }
-
-                p {
-                    width: 62%;
-                    color: rgba(255,255,255,0.7);
-                    font-size: 14px;
-                    margin: 0 0 0 13em;
-                }
-            }
-
-            .resources {
-                background: url(../img/resources.jpg);
-                background-size: cover;
-                width: 50%;
-                height: 204px;
-                -moz-border-radius: 0 3px 3px 0;
-                -webkit-border-radius: 0 3px 3px 0;
-                border-radius: 0 3px 3px 0;
-
-                a {
-                    margin: 0px 0 0 346px;
-                    position: relative;
-                    bottom: -159px;
-                    font-size: 14px;
-                    background: #fdfdfd;
-                    background: -moz-linear-gradient(top,#fdfdfd 0%,#808282 100%);
-                    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fdfdfd),color-stop(100%,#808282));
-                    background: -webkit-linear-gradient(top,#fdfdfd 0%,#808282 100%);
-                    background: -o-linear-gradient(top,#fdfdfd 0%,#808282 100%);
-                    background: -ms-linear-gradient(top,#fdfdfd 0%,#808282 100%);
-                    background: linear-gradient(to bottom,#fdfdfd 0%,#808282 100%);
-                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd',endColorstr='#808282',GradientType=0);
-                    padding: 5px 9px;
-                    color: rgba(0,0,0,.7);
-                    text-decoration: none;
-                    -moz-border-radius: 3px;
-                    -webkit-border-radius: 3px;
-                    border-radius: 3px;
                 }
             }
         }
@@ -307,26 +136,50 @@
         background: url(../img/footer-bg.jpg);
         margin-top: 3em;
 
-        ul {
+        .pages {
             list-style: none;
             display: flex;
+            margin: 0 auto;
+            padding: 1em 0;
             justify-content: space-between;
             width: 1000px;
-            margin: 0 auto;
-            padding: 1.5em 0;
+
 
             li {
-                a {
-                    color: white;
-                    text-decoration: none;
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li:first-child {
+                        a {
+                            font-size: 17px;
+                        }
+                    }
+
+                    li {
+                        padding: .2em 0;
+
+                        a {
+                            text-align: center;
+                            color: white;
+                            text-decoration: none;
+                            font-size: 14px;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
         }
+
         .copy {
             background: black;
             padding: 1em 0;
             text-align: center;
-            color: white;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
         }
     }
 }

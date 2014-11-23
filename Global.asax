@@ -10,7 +10,8 @@
     
     public static void RegisterRoutes(RouteCollection routes)
     {
-        routes.MapPageRoute("home", "home", "~/default.aspx", false);
+        routes.MapPageRoute("hjem", "hjem", "~/default.aspx", false);
+        routes.MapPageRoute("om os", "om-os", "~/om-os.aspx", false);
     }
     
     void Application_End(object sender, EventArgs e) 
