@@ -7,8 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <!-- get images -->
     <slider-component>
-        <img src="/slider/images/alliance-mini-ii.jpg" alt="" />
-        <img src="/slider/images/alliance-pro.jpg" alt="" />
+        <asp:literal ID="litSlider" runat="server" />
     </slider-component>
     <div class="first">
         <div class="vicon">
