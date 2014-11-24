@@ -6,26 +6,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="breadcrumbs">
-        <!-- get breadcrumb -->
-        <bread-crumb type="first"><a href="/hjem">Hjem</a></bread-crumb><bread-crumb type="last"><a href="/om-os">Om Os</a></bread-crumb>
+        <asp:Literal ID="litBreadcrumb" runat="server" />
     </div>
     <div class="content">
         <aside>
-            <!-- get page name -->
-            <h2>Page Name</h2>
+            <h2><asp:Literal ID="litPagename" runat="server" /></h2>
             <hr />
             <ul>
-                <!-- get subpages -->
-                <li><a href="#">subpage</a></li>
-                <li><a href="#">subpage</a></li>
-                <li><a href="#">subpage</a></li>
+                <asp:Literal ID="litSubpages" runat="server" />
             </ul>
             <a class="buy" href="/how-to-buy">How To Buy</a>
         </aside>
         <div class="page">
             <div class="top"></div>
-            <!-- get content -->
-            content
+            <asp:Literal ID="litContent" runat="server" />
         </div>
     </div>
 </asp:Content>
