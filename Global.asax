@@ -12,6 +12,12 @@
     {
         routes.MapPageRoute("hjem", "hjem", "~/default.aspx", false);
         routes.MapPageRoute("om os", "om-os", "~/om-os.aspx", false);
+        routes.MapPageRoute("kategorier", "kategorier", "~/kategorier.aspx", false);
+        routes.MapPageRoute("produkter", "produkter", "~/produkter.aspx", false);
+        routes.MapPageRoute("support", "support", "~/support.aspx", false);
+        routes.MapPageRoute("partnere", "partnere", "~/partnere.aspx", false);
+        routes.MapPageRoute("dokumenter", "dokumenter", "~/dokumenter.aspx", false);
+        routes.MapPageRoute("nyheder & begivenheder", "nyheder", "~/nyheder.aspx", false);    
     }
     
     void Application_End(object sender, EventArgs e) 
