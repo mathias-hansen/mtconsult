@@ -13,6 +13,7 @@
     public static void RegisterRoutes(RouteCollection routes, List<page> pages)
     {
         routes.MapPageRoute("hjem", "hjem", "~/default.aspx", false);
+        routes.MapPageRoute("nyheder", "nyheder", "~/nyheder.aspx", false);
 
         foreach (page page in pages)
         {
