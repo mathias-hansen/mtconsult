@@ -32,7 +32,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     public void getSubpages(page page, Literal litPage)
     {
         string queryString = HttpContext.Current.Request.Url.AbsolutePath;
-
+        
+        litPage.Text = "";
         foreach (subpage subpage in page._subpages)
         {
             string sub = Regex.Match(queryString, "/" + Regex.Replace(page._name, @"\s", "-") + "/" + Regex.Replace(subpage._name, @"\s", "-"), RegexOptions.IgnoreCase).ToString();
