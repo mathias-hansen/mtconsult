@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="dokumenter.aspx.cs" Inherits="om_os" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="css/page.min.css" rel="stylesheet" />
-    <link rel="import" href="bower_components/breadcrumb/breadcrumb.html" />
+    <link href="/css/page.min.css" rel="stylesheet" />
+    <link rel="import" href="/bower_components/breadcrumb/breadcrumb.html" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="breadcrumbs">

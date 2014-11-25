@@ -11,20 +11,29 @@ public class page
     public string _content { get; set; }
     public List<subpage> _subpages { get; set; }
 
-    public void getPage(int id)
+    public List<page> getPages()
     {
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
         SqlCommand cmd = new SqlCommand();
+        List<page> pages = new List<page>();
         subpage subpage = new global::subpage();
+        int id = 2;
 
-        cmd.CommandText = "SELECT * FROM mtconsult_page WHERE id =" + id;
+        cmd.CommandText = "SELECT * FROM mtconsult_page";
         dt = da.GetData(cmd);
-        page page = new global::page();
+        
+        foreach (DataRow row in dt.Rows)
+        {
+            page page = new global::page();
 
-        _name = dt.Rows[0]["name"].ToString();
-        _content = dt.Rows[0]["content"].ToString();
-        _subpages = subpage.getSubpages(id, 0);
+            page._name = row["name"].ToString();
+            page._content = row["content"].ToString();
+            page._subpages = subpage.getSubpages(id, 0);
+            id++;
+            pages.Add(page);
+        }
+        return pages;
     }
 }
 
