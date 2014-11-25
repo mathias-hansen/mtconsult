@@ -118,6 +118,9 @@ body .wrapper header nav ul li a {
 body .wrapper header nav ul li a:hover {
   color: #00c1cb;
 }
+body .wrapper header nav ul li.selected a {
+  color: #00c1cb;
+}
 body .footer {
   background: url(../img/footer-bg.jpg);
   margin-top: 3em;
@@ -149,6 +152,9 @@ body .footer .pages li ul li a {
 }
 body .footer .pages li ul li a:hover {
   text-decoration: underline;
+}
+body .footer .pages li ul li.selected a {
+  color: #00c1cb;
 }
 body .footer .copy {
   background: black;

@@ -33,7 +33,7 @@
     <div class="secound">
         <div class="advantage">
             <div class="buttons">
-                <a href="http://www.iqeye.com/resources/iqadvantages"><img src="img/iqadvantages.png" alt="Iq Advantages" /></a><a href="/nyheder">Nyheder</a>
+                <a href="http://www.iqeye.com/resources/iqadvantages"><img width="111" height="27" src="img/iqadvantages.png" alt="Iq Advantages" /></a><a href="/nyheder">Nyheder</a>
             </div>
             <p>Home of IQeye H.264 and MJPEG HD Megapixel IP cameras. Leading the high-resolution and network camera industry since 1998, we offer complete surveillance camera systems, including day/night, vandal-resistant, and weatherproof IP cameras.</p>
         </div>

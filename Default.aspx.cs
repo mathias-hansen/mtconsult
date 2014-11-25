@@ -13,9 +13,10 @@ public partial class _Default : System.Web.UI.Page
         {
             slider slider = new slider();
             slider.getImages();
-            foreach (image img in slider._images)
+            litSlider.Text = "";
+            foreach (string img in slider._images)
             {
-                litSlider.Text += "<img src='slider/images/" + img._filename + "' alt'" + img._description + "' />";
+                litSlider.Text += "<img src='slider/images/" + img + "' />";
             }
         }
     }

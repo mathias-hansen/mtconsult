@@ -25,9 +25,10 @@
     <meta name="msapplication-TileImage" content="img/icons/ms-touch-icon-144x144-precomposed.png" />
     <meta name="msapplication-TileColor" content="#3372DF" />
 
-    <link href="css/master.min.css" rel="stylesheet" />
+    <link href="/css/master.min.css" rel="stylesheet" />
     <link rel="import" href="bower_components/polymer/polymer.html" />
-    <script src="bower_components/platform/platform.js"></script>
+    <script src="/bower_components/platform/platform.js"></script>
+    <script async src="/js/Script.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -47,7 +48,7 @@
                 <nav>
                     <ul>
                         <!-- set selected -->
-                        <li><a href="/hjem"><img src="img/home.png" /></a></li>
+                        <li><a href="/hjem"><img width="40" height="52" src="/img/home.png" /></a></li>
                         <li><a href="/om-os">Om os</a></li>
                         <li><a href="/kategorier">Kategorier</a></li>
                         <li><a href="/produkter">Produkter</a></li>
@@ -69,36 +70,43 @@
                 <li>
                     <ul>
                         <li><a href="/om-os">Om os</a></li>
+                        <asp:Literal ID="litPage0" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
                         <li><a href="/kategorier">Kategorier</a></li>
+                        <asp:Literal ID="litPage1" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
                         <li><a href="/produkter">Produkter</a></li>
+                        <asp:Literal ID="litPage2" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
                         <li><a href="/support">Support</a></li>
+                        <asp:Literal ID="litPage3" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
                         <li><a href="/partnere">Partnere</a></li>
+                        <asp:Literal ID="litPage4" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
                         <li><a href="/docs">Dokumenter</a></li>
+                        <asp:Literal ID="litPage5" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
                         <li><a href="/nyheder">Nyheder & Begivenheder</a></li>
+                        <asp:Literal ID="litPage6" runat="server" />
                     </ul>
                 </li>
             </ul>
