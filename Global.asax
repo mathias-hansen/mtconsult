@@ -14,6 +14,7 @@
     {
         routes.MapPageRoute("hjem", "hjem", "~/default.aspx", false);
         routes.MapPageRoute("nyheder", "nyheder", "~/nyheder.aspx", false);
+        routes.MapPageRoute("how to buy", "how-to-buy", "~/how-to-buy.aspx", false);
 
         foreach (page page in pages)
         {
