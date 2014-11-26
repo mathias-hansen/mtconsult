@@ -37,7 +37,7 @@ public partial class om_os : System.Web.UI.Page
             i++;
         }
 
-        litContent.Text += std + dome;
+        litContent.Text += "<div class='std'><h2>Standard Kameraer</h2>" + std + "</div><div class='dome'><h2>Dome Kameraer</h2>" + dome + "</div>";
     }
     public string displayProd(product prod, int i)
     {
@@ -59,9 +59,9 @@ public partial class om_os : System.Web.UI.Page
 
         strProd += "<div class='prod'>";
 
-        strProd += "<img src='/img/prods/" + images[0]._filename + "' />";
+        strProd += "<img src='" + images[0]._filename + "' />";
 
-        strProd += "<h2>" + prod._header + "</h2>";
+        strProd += "<h3>" + prod._header + "</h3>";
 
         strProd += "<p>" + prod._description + "</p>";
 
