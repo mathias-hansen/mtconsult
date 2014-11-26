@@ -17,6 +17,7 @@ public class product
     public bool _dome { get; set; }
     public bool _indoor { get; set; }
     public bool _outdoor { get; set; }
+    public int _resolution { get; set; }
 
     DataAccess da = new DataAccess();
     SqlCommand cmd = new SqlCommand();
@@ -36,6 +37,7 @@ public class product
         _dome = Convert.ToBoolean(row["dome"]);
         _indoor = Convert.ToBoolean(row["indoor"]);
         _outdoor = Convert.ToBoolean(row["outdoor"]);
+        _resolution = new resolutions().list[Convert.ToInt32(row["resolution"])];
     }
     List<int> getAccessories(int prodId)
     {
@@ -139,4 +141,17 @@ public class specRow
 {
     public string _header { get; set; }
     public string _detail { get; set; }
+}
+public class resolutions
+{ 
+    public Dictionary<int, int> list =  new Dictionary<int, int>();
+    public resolutions()
+	{
+        list.Add(0, 10);
+        list.Add(1, 20);
+        list.Add(2, 31);
+        list.Add(3, 36);
+        list.Add(4, 50);
+        list.Add(5, 120);
+	}
 }
