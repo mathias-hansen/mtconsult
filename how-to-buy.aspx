@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="breadcrumbs">
-        <bread-crumb type="first"><a href="/hjem">Hjem</a></bread-crumb><bread-crumb type="last"><a href="/how-to-buy">How to buy</a></bread-crumb>
+        <bread-crumb type="first"><a href="/default.aspx">Hjem</a></bread-crumb><bread-crumb type="last"><a href="/how-to-buy">How to buy</a></bread-crumb>
     </div>
     <div class="content">
         <aside>
