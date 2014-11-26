@@ -10,16 +10,30 @@
     </div>
     <div class="content">
         <aside>
-            <h2><asp:Literal ID="litPagename" runat="server" /></h2>
+            <h2>Produkter</h2>
             <hr />
             <ul>
-                <asp:Literal ID="litSubpages" runat="server" />
+                <li>
+                    <a href="/produkter">Standard Kameraer</a>
+                    <ul>
+                        <asp:Literal id="litStd" runat="server" />
+                    </ul>
+                </li>
+                <li>
+                    <a href="/produkter">Dome Kameraer</a> 
+                    <ul>
+                        <asp:Literal id="litDome" runat="server" />
+                    </ul>
+                </li>
+                <li><a href="/iq-software">IQ Software</a></li>
+                <li><a href="/tilbehør">tilbehør</a></li>
+                <li><a href="?">Produkt sammenligner</a></li>
             </ul>
             <a class="buy" href="/how-to-buy">How To Buy</a>
         </aside>
         <div class="page">
             <div class="top"></div>
-            <asp:Literal ID="litContent" runat="server" />
+            <asp:Literal id="litContent" runat="server" />
         </div>
     </div>
 </asp:Content>

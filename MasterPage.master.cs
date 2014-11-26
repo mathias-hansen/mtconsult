@@ -27,7 +27,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
         getSubpages(pages[3], litPage3);
         getSubpages(pages[4], litPage4);
         getSubpages(pages[5], litPage5);
-        getSubpages(pages[6], litPage6);
     }
     public void getSubpages(page page, Literal litPage)
     {

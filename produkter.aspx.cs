@@ -10,66 +10,80 @@ public partial class om_os : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        int pageId = 2;
-        List<page> pages = (List<page>)Session["pages"];
-        page page = pages[pageId];
-        string query = HttpContext.Current.Request.Url.AbsolutePath;
+        product product = new global::product();
+        List<product> prods = product.getProducts();
 
-        string sub = Regex.Match(query, "/" + Regex.Replace(page._name, @"\s", "-") + @"/[\w\d\-]+", RegexOptions.IgnoreCase).ToString();
-        if (sub != "")
-        {
-            subpage subpage = page._subpages[getSubpageId(query, page._subpages)];
-            getSubPage(subpage, page._name);
-        }
-        else
-        {
-            getPage(page);
-        }
-    }
-    public void getPage(page page)
-    {
+        displayProds(prods);
 
-        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/hjem'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + "'>" + page._name + "</a></bread-crumb>";
-
-        litPagename.Text = page._name;
-
-        litSubpages.Text = "";
-        foreach (subpage subpage in page._subpages)
-        {
-            litSubpages.Text += "<li><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a>";
-            // get subpage subpages
-            litSubpages.Text += "</li>";
-        }
-
-        litContent.Text = page._content;
+        getNav(prods);
     }
 
-    public void getSubPage(subpage subpage, string pageName)
+    public void displayProds(List<product> prods)
     {
-        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/hjem'>Hjem</a></bread-crumb><bread-crumb><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + "'>" + pageName + "</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + "/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></bread-crumb>";
-
-        litPagename.Text = subpage._name;
-
-        litSubpages.Text = "";
-        foreach (subpage subsubpage in subpage._subpages)
+        litContent.Text = "<div class='standard'>";
+        foreach (product prod in prods)
         {
-            litSubpages.Text += "<li><a href='/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "'>" + subsubpage._name + "</a></li>";
-        }
-        litContent.Text = subpage._content;
-    }
-    public int getSubpageId(string query, List<subpage> subpages)
-    {
-        int id = -1;
-        int i = 0;
-
-        foreach (subpage subpage in subpages)
-        {
-            if (Regex.Match(query, subpage._name + "$").ToString() != "")
+            if (!prod._dome)
             {
-                id = i;
+                displayProd(prod);
             }
-            i++;
         }
-        return id;
+        litContent.Text += "</div>";
+
+        litContent.Text += "<div class='dome'>";
+        foreach (product prod in prods)
+        {
+            if (prod._dome)
+            {
+                displayProd(prod);
+            }
+        }
+        litContent.Text += "</div>";
+    }
+    public void displayProd(product prod)
+    {
+        List<image> images = new List<image>();
+        List<image> techImages = new List<image>();
+
+        foreach (image img in prod._images)
+        {
+            if (img._type)
+            {
+                images.Add(img);
+            }
+            else
+            {
+                techImages.Add(img);
+            }
+        }
+
+        litContent.Text += "<div class='prod'>";
+
+        litContent.Text += "<img src='/img/prods/" + images[0]._filename + "' />";
+
+        litContent.Text += "<h2>" + prod._header + "</h2>";
+
+        litContent.Text += "<p>" + prod._description + "</p>";
+
+        litContent.Text += "<a href='/produkt/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>Læs mere</a>";
+
+        // compare link
+
+        litContent.Text += "</div>";
+    }
+
+    public void getNav(List<product> prods)
+    {
+        foreach (product prod in prods)
+        {
+            if (!prod._dome)
+            {
+                litStd.Text += "<li><a href='/produkt/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
+            }
+            else
+            {
+                litDome.Text += "<li><a href='/produkt/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
+            }
+        }
     }
 }
