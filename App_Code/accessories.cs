@@ -14,9 +14,6 @@ public class accessroie
     public int _height { get; set; }
     public int _depth { get; set; }
     public int _weight { get; set; }
-
-    DataAccess da = new DataAccess();
-    SqlCommand cmd = new SqlCommand();
     
     public accessroie(DataRow row)
     {
@@ -29,8 +26,10 @@ public class accessroie
         _weight = Convert.ToInt32(row["weight"]);
     }
 
-    public List<accessroie> getAccessories()
+    public static List<accessroie> getAccessories()
     {
+        DataAccess da = new DataAccess();
+        SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         List<accessroie> accessories = new List<accessroie>();
 
@@ -44,8 +43,10 @@ public class accessroie
 
         return accessories;
     }
-    public List<accessroie> getAccessories(List<int> these)
+    public static List<accessroie> getAccessories(List<int> these)
     {
+        DataAccess da = new DataAccess();
+        SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         List<accessroie> accessories = new List<accessroie>();
 

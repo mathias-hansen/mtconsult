@@ -13,17 +13,14 @@ public class page
 
     public page()
     { }
-
     public page(DataRow row, int id)
     {
-        subpage subpage = new global::subpage();
-
         _name = row["name"].ToString();
         _content = row["content"].ToString();
-        _subpages = subpage.getSubpages(id, 0);
+        _subpages = subpage.getPages(id, 0);
     }
 
-    public List<page> getPages()
+    public static List<page> getPages()
     {
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
@@ -44,18 +41,10 @@ public class page
     }
 }
 
-public class subpage
+public class subpage : page
 {
-    public string _name { get; set; }
-    public string _content { get; set; }
     public int _parent { get; set; }
     public int _level { get; set; }
-    public List<subpage> _subpages { get; set; }
-
-    public subpage()
-    { 
-    
-    }
 
     public subpage(DataRow row, int id)
     {
@@ -63,10 +52,10 @@ public class subpage
         _content = row["content"].ToString();
         _parent = id;
         _level = Convert.ToInt32(row["level"]);
-        _subpages = this.getSubpages(Convert.ToInt32(row["id"]), Convert.ToInt32(row["level"]));
+        _subpages = subpage.getPages(Convert.ToInt32(row["id"]), Convert.ToInt32(row["level"]));
     }
 
-    public List<subpage> getSubpages(int id, int level)
+    public static List<subpage> getPages(int id, int level)
     {
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();

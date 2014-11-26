@@ -8,7 +8,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        page page = new global::page();
         List<page> pages = new List<page>();
 
         if (Session["pages"] == null)

@@ -21,9 +21,6 @@ public class product
     DataAccess da = new DataAccess();
     SqlCommand cmd = new SqlCommand();
 
-    public product()
-    { }
-
     public product(DataRow row, int id)
     {
         _header = row["header"].ToString();
@@ -40,7 +37,7 @@ public class product
         _indoor = Convert.ToBoolean(row["indoor"]);
         _outdoor = Convert.ToBoolean(row["outdoor"]);
     }
-    public List<int> getAccessories(int prodId)
+    List<int> getAccessories(int prodId)
     {
         DataTable dt = new DataTable();
         List<int> accessories = new List<int>();
@@ -55,7 +52,7 @@ public class product
 
         return accessories;
     }
-    public List<image> getImages(int prodId)
+    List<image> getImages(int prodId)
     {
         DataTable dt = new DataTable();
         List<image> images = new List<image>();
@@ -73,7 +70,7 @@ public class product
 
         return images;
     }
-    public specifications getSpecs(int prodId)
+    specifications getSpecs(int prodId)
     {
         DataTable dt = new DataTable();
         specifications specs = new specifications();
@@ -105,8 +102,10 @@ public class product
         return specs;
     }
 
-    public List<product> getProducts()
+    public static List<product> getProducts()
     {
+        DataAccess da = new DataAccess();
+        SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         List<product> prods = new List<product>();
 

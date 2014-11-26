@@ -10,7 +10,6 @@ public partial class om_os : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        product product = new global::product();
         List<product> prods = product.getProducts();
 
         litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/produkter.aspx'>Produkter</a></bread-crumb>";
