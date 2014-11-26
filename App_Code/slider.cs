@@ -11,7 +11,7 @@ public class slider
 {
     public string[] _images { get; set; }
 
-    public void getImages()
+    public slider()
     {
         _images = Directory.GetFiles(HttpContext.Current.Server.MapPath("/slider/images"));
         for (int i = 0; i < _images.Length; i++)

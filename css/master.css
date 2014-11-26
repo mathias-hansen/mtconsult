@@ -161,6 +161,10 @@ body .footer .pages li ul li a:hover {
 body .footer .pages li ul li.selected a {
   color: #00c1cb;
 }
+body .footer .pages li a:focus {
+  color: #00c1cb;
+  outline: none;
+}
 body .footer .copy {
   background: black;
   padding: 1em 0;

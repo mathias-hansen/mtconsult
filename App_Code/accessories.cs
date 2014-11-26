@@ -17,6 +17,17 @@ public class accessroie
 
     DataAccess da = new DataAccess();
     SqlCommand cmd = new SqlCommand();
+    
+    public accessroie(DataRow row)
+    {
+        _header = row["header"].ToString();
+        _modelNumber = row["modelNumber"].ToString();
+        _description = row["description"].ToString();
+        _width = Convert.ToInt32(row["width"]);
+        _height = Convert.ToInt32(row["height"]);
+        _depth = Convert.ToInt32(row["depth"]);
+        _weight = Convert.ToInt32(row["weight"]);
+    }
 
     public List<accessroie> getAccessories()
     {
@@ -26,9 +37,9 @@ public class accessroie
         cmd.CommandText = "SELECT * FROM mtconsult_accessories";
         dt = da.GetData(cmd);
 
-        foreach (DataRow accessorie in dt.Rows)
+        foreach (DataRow row in dt.Rows)
         {
-            accessories.Add(fillAccessorie(accessorie));
+            accessories.Add(new accessroie(row));
         }
 
         return accessories;
@@ -46,25 +57,11 @@ public class accessroie
 
         dt = da.GetData(cmd);
 
-        foreach (DataRow accessorie in dt.Rows)
+        foreach (DataRow row in dt.Rows)
         {
-            accessories.Add(fillAccessorie(accessorie));
+            accessories.Add(new accessroie(row));
         }
 
         return accessories;
-    }
-
-
-    public accessroie fillAccessorie(DataRow accessorie)
-    {
-        accessroie access = new accessroie();
-        access._header = accessorie["header"].ToString();
-        access._modelNumber = accessorie["modelNumber"].ToString();
-        access._description = accessorie["description"].ToString();
-        access._width = Convert.ToInt32(accessorie["width"]);
-        access._height = Convert.ToInt32(accessorie["height"]);
-        access._depth = Convert.ToInt32(accessorie["depth"]);
-        access._weight = Convert.ToInt32(accessorie["weight"]);
-        return access;
     }
 }

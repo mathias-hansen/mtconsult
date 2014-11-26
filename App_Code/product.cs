@@ -17,43 +17,29 @@ public class product
     public bool _dome { get; set; }
     public bool _indoor { get; set; }
     public bool _outdoor { get; set; }
-    
+
     DataAccess da = new DataAccess();
     SqlCommand cmd = new SqlCommand();
 
-    public List<product> getProducts()
+    public product()
+    { }
+
+    public product(DataRow row, int id)
     {
-        DataTable dt = new DataTable();
-        List<product> prods = new List<product>();
+        _header = row["header"].ToString();
+        _description = row["description"].ToString();
 
-        cmd.CommandText = "SELECT * FROM mtconsult_product";
-        dt = da.GetData(cmd);
+        _images = getImages(id);
+        _accessories = getAccessories(id);
+        _specs = getSpecs(id);
 
-        foreach (DataRow prod in dt.Rows)
-        {
-            product product = new product();
-            int id = Convert.ToInt32(prod["id"]);
+        _features = row["features"].ToString();
+        _configuraion = row["configuration"].ToString();
 
-            product._header = prod["header"].ToString();
-            product._description = prod["description"].ToString();
-
-            product._images = getImages(id);
-            product._accessories = getAccessories(id);
-            product._specs = getSpecs(id);
-
-            product._features = prod["features"].ToString();
-            product._configuraion = prod["configuration"].ToString();
-
-            product._dome = Convert.ToBoolean(prod["dome"]);
-            product._indoor = Convert.ToBoolean(prod["indoor"]);
-            product._outdoor = Convert.ToBoolean(prod["outdoor"]);
-
-            prods.Add(product);
-        }
-
-        return prods;
+        _dome = Convert.ToBoolean(row["dome"]);
+        _indoor = Convert.ToBoolean(row["indoor"]);
+        _outdoor = Convert.ToBoolean(row["outdoor"]);
     }
-
     public List<int> getAccessories(int prodId)
     {
         DataTable dt = new DataTable();
@@ -69,7 +55,6 @@ public class product
 
         return accessories;
     }
-
     public List<image> getImages(int prodId)
     {
         DataTable dt = new DataTable();
@@ -88,7 +73,6 @@ public class product
 
         return images;
     }
-
     public specifications getSpecs(int prodId)
     {
         DataTable dt = new DataTable();
@@ -120,6 +104,23 @@ public class product
 
         return specs;
     }
+
+    public List<product> getProducts()
+    {
+        DataTable dt = new DataTable();
+        List<product> prods = new List<product>();
+
+        cmd.CommandText = "SELECT * FROM mtconsult_product";
+        dt = da.GetData(cmd);
+
+        foreach (DataRow prod in dt.Rows)
+        {
+            int id = Convert.ToInt32(prod["id"]);
+            prods.Add(new product(prod, id));
+        }
+
+        return prods;
+    }
 }
 
 public class image
@@ -127,7 +128,6 @@ public class image
     public string _filename { get; set; }
     public bool _type { get; set; }
 }
-
 public class specifications
 {
     public List<specRow> _video { get; set; }
@@ -136,7 +136,6 @@ public class specifications
     public List<specRow> _io { get; set; }
     public List<specRow> _misc { get; set; }
 }
-
 public class specRow
 {
     public string _header { get; set; }

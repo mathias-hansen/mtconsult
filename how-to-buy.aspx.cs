@@ -13,13 +13,6 @@ public partial class how_to_buy : System.Web.UI.Page
     }
     protected void btnSend_Click(object sender, EventArgs e)
     {
-        contact contact = new contact();
-        contact.name = txtName.Text;
-        contact.email = txtEmail.Text;
-        contact.phone = Convert.ToInt32(txtPhone.Text);
-        contact.company = txtCompany.Text;
-        contact.descripiton = txtDescription.Text;
-        contact.comments = txtComments.Text;
-        contact.newContact();
+        contact contact = new contact(txtName.Text, txtEmail.Text, txtSubject.Text, Convert.ToInt32(txtPhone.Text), txtCompany.Text, txtDescription.Text, txtComments.Text);
     }
 }

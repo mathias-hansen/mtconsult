@@ -12,7 +12,6 @@ public partial class _Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             slider slider = new slider();
-            slider.getImages();
             litSlider.Text = "";
             foreach (string img in slider._images)
             {
