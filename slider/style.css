@@ -21,7 +21,7 @@
     opacity: 0;
 }
 
-    #left:hover, #right:hover {
+    #left:hover, #right:hover, #left:focus, #right:focus {
         opacity: .1;
     }
 

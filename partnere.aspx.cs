@@ -10,7 +10,7 @@ public partial class om_os : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        int pageId = 4;
+        int pageId = 3;
         List<page> pages = (List<page>)Session["pages"];
         page page = pages[pageId];
         string query = HttpContext.Current.Request.Url.AbsolutePath;

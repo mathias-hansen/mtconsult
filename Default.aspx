@@ -22,23 +22,29 @@
             <div>
                 <select>
                     <option>Kamera Type</option>
+                    <option>Dome Indoor</option>
+                    <option>Dome Indoor/Outdoor</option>
+                    <option>Dome Outdoor</option>
+                    <option>Standard Indoor</option>
+                    <option>Standard Indoor/Outdoor</option>
+                    <option>Standard Outdoor</option>
                 </select>
                 <select>
                     <option>Opløsning</option>
                 </select>
-                <a href="/?">Sammenlign</a>
+                <a href="/produkter.aspx/produkt-sammenligner">Sammenlign</a>
             </div>
         </div>
     </div>
     <div class="secound">
         <div class="advantage">
             <div class="buttons">
-                <a href="http://www.iqeye.com/resources/iqadvantages"><img width="111" height="27" src="img/iqadvantages.png" alt="Iq Advantages" /></a><a href="/nyheder">Nyheder</a>
+                <a href="http://www.iqeye.com/resources/iqadvantages"><img width="111" height="27" src="img/iqadvantages.png" alt="Iq Advantages" /></a><a href="/nyheder.aspx">Nyheder</a>
             </div>
             <p>Home of IQeye H.264 and MJPEG HD Megapixel IP cameras. Leading the high-resolution and network camera industry since 1998, we offer complete surveillance camera systems, including day/night, vandal-resistant, and weatherproof IP cameras.</p>
         </div>
         <div class="resources">
-            <a href="http://www.iqeye.com/sites/all/themes/iqinvision/images/learn-more-gray.png">Learn More</a>
+            <a href="/support.aspx">Learn More</a>
         </div>
     </div>
 </asp:Content>

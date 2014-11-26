@@ -13,6 +13,7 @@ public partial class om_os : System.Web.UI.Page
         product product = new global::product();
         List<product> prods = product.getProducts();
 
+        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/produkter.aspx'>Produkter</a></bread-crumb>";
         displayProds(prods);
 
         getNav(prods);
@@ -20,30 +21,30 @@ public partial class om_os : System.Web.UI.Page
 
     public void displayProds(List<product> prods)
     {
-        litContent.Text = "<div class='standard'>";
+        int i = 0;
+        string std = string.Empty;
+        string dome = string.Empty;
+
         foreach (product prod in prods)
         {
             if (!prod._dome)
             {
-                displayProd(prod);
+                std += displayProd(prod, i);
             }
-        }
-        litContent.Text += "</div>";
-
-        litContent.Text += "<div class='dome'>";
-        foreach (product prod in prods)
-        {
-            if (prod._dome)
+            else
             {
-                displayProd(prod);
+                dome += displayProd(prod, i);
             }
+            i++;
         }
-        litContent.Text += "</div>";
+
+        litContent.Text += std + dome;
     }
-    public void displayProd(product prod)
+    public string displayProd(product prod, int i)
     {
         List<image> images = new List<image>();
         List<image> techImages = new List<image>();
+        string strProd = string.Empty;
 
         foreach (image img in prod._images)
         {
@@ -57,33 +58,35 @@ public partial class om_os : System.Web.UI.Page
             }
         }
 
-        litContent.Text += "<div class='prod'>";
+        strProd += "<div class='prod'>";
 
-        litContent.Text += "<img src='/img/prods/" + images[0]._filename + "' />";
+        strProd += "<img src='/img/prods/" + images[0]._filename + "' />";
 
-        litContent.Text += "<h2>" + prod._header + "</h2>";
+        strProd += "<h2>" + prod._header + "</h2>";
 
-        litContent.Text += "<p>" + prod._description + "</p>";
+        strProd += "<p>" + prod._description + "</p>";
 
-        litContent.Text += "<a href='/produkter.aspx/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>Læs mere</a>";
+        strProd += "<a href='/produkter.aspx?prod=" + i + "'>Læs mere</a>";
 
         // compare link
 
-        litContent.Text += "</div>";
+        return strProd += "</div>";
     }
 
     public void getNav(List<product> prods)
     {
+        int i = 0;
         foreach (product prod in prods)
         {
             if (!prod._dome)
             {
-                litStd.Text += "<li><a href='/produkter.aspx/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
+                litStd.Text += "<li><a href='/produkter.aspx?prod=" + i + "'>" + prod._header + "</a></li>";
             }
             else
             {
-                litDome.Text += "<li><a href='/produkter.aspx/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
+                litDome.Text += "<li><a href='/produkter.aspx?prod=" + i + "'>" + prod._header + "</a></li>";
             }
+            i++;
         }
     }
 }

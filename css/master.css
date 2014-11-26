@@ -105,6 +105,9 @@ body .wrapper header nav ul li:first-child a {
   top: 2px;
   border: none;
 }
+body .wrapper header nav ul li:first-child a:focus {
+  outline: 1px solid;
+}
 body .wrapper header nav ul li:last-child a {
   border: none;
 }
@@ -115,8 +118,10 @@ body .wrapper header nav ul li a {
   text-decoration: none;
   border-right: 1px solid black;
 }
-body .wrapper header nav ul li a:hover {
+body .wrapper header nav ul li a:hover,
+body .wrapper header nav ul li a:focus {
   color: #00c1cb;
+  outline: none;
 }
 body .wrapper header nav ul li.selected a {
   color: #00c1cb;
