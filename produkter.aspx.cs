@@ -65,7 +65,7 @@ public partial class om_os : System.Web.UI.Page
 
         litContent.Text += "<p>" + prod._description + "</p>";
 
-        litContent.Text += "<a href='/produkt/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>Læs mere</a>";
+        litContent.Text += "<a href='/produkter.aspx/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>Læs mere</a>";
 
         // compare link
 
@@ -78,11 +78,11 @@ public partial class om_os : System.Web.UI.Page
         {
             if (!prod._dome)
             {
-                litStd.Text += "<li><a href='/produkt/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
+                litStd.Text += "<li><a href='/produkter.aspx/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
             }
             else
             {
-                litDome.Text += "<li><a href='/produkt/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
+                litDome.Text += "<li><a href='/produkter.aspx/" + Regex.Replace(prod._header, @"\s", "-").ToLower() + "'>" + prod._header + "</a></li>";
             }
         }
     }

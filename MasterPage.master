@@ -38,24 +38,24 @@
         <div class="wrapper">
             <header>
                 <div class="top">
-                    <h1><a href="/hjem">MtConsult</a></h1>
+                    <h1><a href="/default.aspx">MtConsult</a></h1>
                     <div class="search">
                         <asp:TextBox ID="txtSearch" placeholder="find produkter... " runat="server" />
                         <asp:ImageButton ID="btnSearch" ImageUrl="/img/search.png" runat="server" />
-                        <a href="/how-to-buy">How To Buy</a>
+                        <a href="/how-to-buy.aspx">How To Buy</a>
                     </div>
                 </div>
                 <nav>
                     <ul>
                         <!-- set selected -->
-                        <li><a href="/hjem"><img width="40" height="52" src="/img/home.png" /></a></li>
-                        <li><a href="/om-os">Om os</a></li>
-                        <li><a href="/kategorier">Kategorier</a></li>
-                        <li><a href="/produkter">Produkter</a></li>
-                        <li><a href="/support">Support</a></li>
-                        <li><a href="/partnere">Partnere</a></li>
-                        <li><a href="/dokumenter">Dokumenter</a></li>
-                        <li><a href="/nyheder">Nyheder & Begivenheder</a></li>
+                        <li><a href="/default.aspx"><img width="40" height="52" src="/img/home.png" /></a></li>
+                        <li><a href="/om-os.aspx">Om os</a></li>
+                        <li><a href="/kategorier.aspx">Kategorier</a></li>
+                        <li><a href="/produkter.aspx">Produkter</a></li>
+                        <li><a href="/support.aspx">Support</a></li>
+                        <li><a href="/partnere.aspx">Partnere</a></li>
+                        <li><a href="/dokumenter.aspx">Dokumenter</a></li>
+                        <li><a href="/nyheder.aspx">Nyheder & Begivenheder</a></li>
                     </ul>
                 </nav>
             </header>
@@ -69,43 +69,43 @@
             <ul class="pages">
                 <li>
                     <ul>
-                        <li><a href="/om-os">Om os</a></li>
+                        <li><a href="/om-os.aspx">Om os</a></li>
                         <asp:Literal ID="litPage0" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
-                        <li><a href="/kategorier">Kategorier</a></li>
+                        <li><a href="/kategorier.aspx">Kategorier</a></li>
                         <asp:Literal ID="litPage1" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
-                        <li><a href="/produkter">Produkter</a></li>
+                        <li><a href="/produkter.aspx">Produkter</a></li>
                         <asp:Literal ID="litPage2" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
-                        <li><a href="/support">Support</a></li>
+                        <li><a href="/support.aspx">Support</a></li>
                         <asp:Literal ID="litPage3" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
-                        <li><a href="/partnere">Partnere</a></li>
+                        <li><a href="/partnere.aspx">Partnere</a></li>
                         <asp:Literal ID="litPage4" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
-                        <li><a href="/docs">Dokumenter</a></li>
+                        <li><a href="/dokumenter.aspx">Dokumenter</a></li>
                         <asp:Literal ID="litPage5" runat="server" />
                     </ul>
                 </li>
                 <li>
                     <ul>
-                        <li><a href="/nyheder">Nyheder & Begivenheder</a></li>
+                        <li><a href="/nyheder.aspx">Nyheder & Begivenheder</a></li>
                         <asp:Literal ID="litPage6" runat="server" />
                     </ul>
                 </li>
@@ -115,7 +115,6 @@
             </div>
         </div>
     </form>
-
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

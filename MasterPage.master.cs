@@ -38,11 +38,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
             string sub = Regex.Match(queryString, "/" + Regex.Replace(page._name, @"\s", "-") + "/" + Regex.Replace(subpage._name, @"\s", "-"), RegexOptions.IgnoreCase).ToString();
             if (sub != "")
             {
-                litPage.Text += "<li class='selected'><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></li>";
+                litPage.Text += "<li class='selected'><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + ".aspx/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></li>";
             }
             else
             {
-                litPage.Text += "<li><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></li>";
+                litPage.Text += "<li><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + ".aspx/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></li>";
             }
         }
     }

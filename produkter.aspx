@@ -14,22 +14,22 @@
             <hr />
             <ul>
                 <li>
-                    <a href="/produkter">Standard Kameraer</a>
+                    <a href="/produkter.aspx">Standard Kameraer</a>
                     <ul>
                         <asp:Literal id="litStd" runat="server" />
                     </ul>
                 </li>
                 <li>
-                    <a href="/produkter">Dome Kameraer</a> 
+                    <a href="/produkter.aspx">Dome Kameraer</a> 
                     <ul>
                         <asp:Literal id="litDome" runat="server" />
                     </ul>
                 </li>
-                <li><a href="/iq-software">IQ Software</a></li>
-                <li><a href="/tilbehør">tilbehør</a></li>
-                <li><a href="?">Produkt sammenligner</a></li>
+                <li><a href="/produkter.aspx/iq-software">IQ Software</a></li>
+                <li><a href="/produkter.aspx/tilbehør">tilbehør</a></li>
+                <li><a href="/produkter.aspx/produkt-sammenligner">Produkt sammenligner</a></li>
             </ul>
-            <a class="buy" href="/how-to-buy">How To Buy</a>
+            <a class="buy" href="/how-to-buy.aspx">How To Buy</a>
         </aside>
         <div class="page">
             <div class="top"></div>

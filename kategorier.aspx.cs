@@ -15,7 +15,7 @@ public partial class om_os : System.Web.UI.Page
         page page = pages[pageId];
         string query = HttpContext.Current.Request.Url.AbsolutePath;
 
-        string sub = Regex.Match(query, "/" + Regex.Replace(page._name, @"\s", "-") + @"/[\w\d\-]+", RegexOptions.IgnoreCase).ToString();
+        string sub = Regex.Match(query, "/" + Regex.Replace(page._name, @"\s", "-") + @".aspx/[\w\d\-]+", RegexOptions.IgnoreCase).ToString();
         if (sub != "")
         {
             subpage subpage = page._subpages[getSubpageId(query, page._subpages)];
@@ -29,14 +29,14 @@ public partial class om_os : System.Web.UI.Page
     public void getPage(page page)
     {
 
-        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/hjem'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + "'>" + page._name + "</a></bread-crumb>";
+        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + ".aspx'>" + page._name + "</a></bread-crumb>";
 
         litPagename.Text = page._name;
 
         litSubpages.Text = "";
         foreach (subpage subpage in page._subpages)
         {
-            litSubpages.Text += "<li><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a>";
+            litSubpages.Text += "<li><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + ".aspx/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a>";
             // get subpage subpages
             litSubpages.Text += "</li>";
         }
@@ -46,14 +46,14 @@ public partial class om_os : System.Web.UI.Page
 
     public void getSubPage(subpage subpage, string pageName)
     {
-        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/hjem'>Hjem</a></bread-crumb><bread-crumb><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + "'>" + pageName + "</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + "/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></bread-crumb>";
+        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/hjem'>Hjem</a></bread-crumb><bread-crumb><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + ".aspx'>" + pageName + "</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + ".aspx/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></bread-crumb>";
 
         litPagename.Text = subpage._name;
 
         litSubpages.Text = "";
         foreach (subpage subsubpage in subpage._subpages)
         {
-            litSubpages.Text += "<li><a href='/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "'>" + subsubpage._name + "</a></li>";
+            litSubpages.Text += "<li><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + ".aspx/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "'>" + subsubpage._name + "</a></li>";
         }
         litContent.Text = subpage._content;
     }
