@@ -2,7 +2,7 @@
 <%@ OutputCache Duration="86400" VaryByParam="none" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="css/forside.min.css" rel="stylesheet" />
+    <link href="/css/forside.min.css" rel="stylesheet" />
     <link rel="import" href="slider/index.html">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">        

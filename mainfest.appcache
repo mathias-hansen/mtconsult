@@ -1,5 +1,13 @@
 CACHE MANIFEST
 
+NETWORK:
+http://www.google-analytics.com/
+
+### TO BE MOVED TO LOCALHOST ###
+http://www.iqeye.com/sites/all/themes/iqinvision/images/product-details-head-bar.jpg
+http://www.iqeye.com/sites/default/files/4K_Sentinel_0.png
+http://www.iqeye.com/sites/default/files/alliance-pro.png
+
 CACHE:
 
 # html
@@ -14,7 +22,6 @@ CACHE:
 
 # polymer
 /bower_components/polymer/polymer.html
-/bower_components/polymer/layout.html
 
 # breadcrumb
 /bower_components/breadcrumb/breadcrumb.html
@@ -55,11 +62,3 @@ CACHE:
 /slider/slider-bar.jpg
 /slider/images/alliance-mini-II.jpg
 /slider/images/alliance-pro.jpg
-
-NETWORK:
-http://www.google-analytics.com/
-
-### TO BE MOVED TO LOCALHOST ###
-http://www.iqeye.com/sites/all/themes/iqinvision/images/product-details-head-bar.jpg
-http://www.iqeye.com/sites/default/files/4K_Sentinel_0.png
-http://www.iqeye.com/sites/default/files/alliance-pro.png

@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class om_os : System.Web.UI.Page
+public partial class produkter : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -17,6 +17,8 @@ public partial class om_os : System.Web.UI.Page
         displayProds(prods);
 
         getNav(prods);
+
+        int i = 0;
     }
 
     public void displayProds(List<product> prods)

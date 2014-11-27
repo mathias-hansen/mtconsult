@@ -26,7 +26,7 @@
     <meta name="msapplication-TileColor" content="#3372DF" />
 
     <link rel="import" href="bower_components/polymer/polymer.html" />
-    <script src="js/js.min.js"></script>
+    <script src="/js/js.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

@@ -2,7 +2,7 @@
 <%@ OutputCache Duration="86400" VaryByParam="none" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="css/layout.min.css" rel="stylesheet" />
+    <link href="/css/layout.min.css" rel="stylesheet" />
     <link rel="import" href="/bower_components/breadcrumb/breadcrumb.html" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
