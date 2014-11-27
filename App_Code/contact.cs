@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+﻿using System.Data.SqlClient;
 
 public class contact
 {
-    public static contact(string name, string email, string subject, int phone, string company, string descripiton, string comments)
+    public static void newContact(string name, string email, string subject, int phone, string company, string descripiton, string comments)
     {
         DataAccess da = new DataAccess();
         SqlCommand cmd = new SqlCommand();

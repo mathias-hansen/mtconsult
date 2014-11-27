@@ -1,0 +1,65 @@
+CACHE MANIFEST
+
+CACHE:
+
+# html
+/default.aspx
+/om-os.aspx
+/kategorier.aspx
+/produkter.aspx
+/support.aspx
+/partnere.aspx
+/dokumenter.aspx
+/nyheder.aspx
+
+# polymer
+/bower_components/polymer/polymer.html
+/bower_components/polymer/layout.html
+
+# breadcrumb
+/bower_components/breadcrumb/breadcrumb.html
+/bower_components/breadcrumb/back-black.png
+/bower_components/breadcrumb/back-blue.png
+/bower_components/breadcrumb/first-black.png
+/bower_components/breadcrumb/front-black.png
+/bower_components/breadcrumb/front-blue.png
+/bower_components/breadcrumb/middle-black.png
+/bower_components/breadcrumb/middle-blue.png
+
+# css
+/css/forside.min.css
+/css/layout.min.css
+/css/produkter.min.css
+
+# javascript
+/js/js.min.js
+
+# images
+/img/bg.jpg
+/img/footer-bg.jpg
+/img/get-to-know-vicon.jpg
+/img/home.png
+/img/iq-advantage.jpg
+/img/iqadvantages.png
+/img/nav-bg.png
+/img/product-selector-tool.jpg
+/img/products-bg.jpg
+/img/resources.jpg
+/img/search.png
+/favicon.ico
+
+# slider
+/slider/index.html
+/slider/main.min.js
+/slider/style.min.css
+/slider/slider-bar.jpg
+/slider/images/alliance-mini-II.jpg
+/slider/images/alliance-pro.jpg
+
+NETWORK:
+http://www.google-analytics.com/
+
+### TO BE MOVED TO LOCALHOST ###
+http://www.iqeye.com/sites/all/themes/iqinvision/images/product-details-head-bar.jpg
+http://www.iqeye.com/sites/default/files/4K_Sentinel_0.png
+http://www.iqeye.com/sites/default/files/alliance-pro.png

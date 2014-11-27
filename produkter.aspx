@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="produkter.aspx.cs" Inherits="om_os" %>
+<%@ OutputCache Duration="86400" VaryByParam="none" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="/css/page.min.css" rel="stylesheet" />
     <link href="css/produkter.min.css" rel="stylesheet" />
     <link rel="import" href="/bower_components/breadcrumb/breadcrumb.html" />
 </asp:Content>

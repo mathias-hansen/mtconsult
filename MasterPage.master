@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html manifest="/mainfest.appcache" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>MtConsult</title>
 
@@ -25,10 +25,8 @@
     <meta name="msapplication-TileImage" content="img/icons/ms-touch-icon-144x144-precomposed.png" />
     <meta name="msapplication-TileColor" content="#3372DF" />
 
-    <link href="/css/master.min.css" rel="stylesheet" />
     <link rel="import" href="bower_components/polymer/polymer.html" />
-    <script src="/bower_components/platform/platform.js"></script>
-    <script async src="/js/Script.js"></script>
+    <script src="js/js.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

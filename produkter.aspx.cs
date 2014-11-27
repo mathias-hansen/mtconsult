@@ -13,6 +13,7 @@ public partial class om_os : System.Web.UI.Page
         List<product> prods = product.getProducts();
 
         litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/produkter.aspx'>Produkter</a></bread-crumb>";
+        
         displayProds(prods);
 
         getNav(prods);
@@ -65,7 +66,7 @@ public partial class om_os : System.Web.UI.Page
 
         strProd += "<p>" + prod._description + "</p>";
 
-        strProd += "<a href='/produkter.aspx?prod=" + i + "'>Læs mere</a>";
+        strProd += "<div class='buttons'><a href='/produkter.aspx?prod=" + i + "'>Læs mere</a><a href='/produkter.aspx/produkt-sammenligner?prod=" + i + "'>Sammenlign</a></div>";
 
         // compare link
 

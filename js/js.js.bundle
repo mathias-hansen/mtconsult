@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="js.js">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+  <file>/bower_components/polymer/polymer.min.js</file>
+  <file>/bower_components/platform/platform.min.js</file>
+  <file>/js/Script.js</file>
+</bundle>

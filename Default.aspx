@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ OutputCache Duration="86400" VaryByParam="none" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="css/default.min.css" rel="stylesheet" />
+    <link href="css/forside.min.css" rel="stylesheet" />
     <link rel="import" href="slider/index.html">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <!-- get images -->
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">        
     <slider-component>
         <asp:literal ID="litSlider" runat="server" />
     </slider-component>

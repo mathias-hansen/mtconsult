@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="layout.css">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+  <file>/css/page.min.css</file>
+  <file>/css/master.min.css</file>
+</bundle>
