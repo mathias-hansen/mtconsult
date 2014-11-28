@@ -201,13 +201,49 @@ public class product
 
         str += "<div class='prodContent'>";
 
-        str += "<div class='features'><p>" + _features + "</p></div>";
+        str += "<div class='features'><h2>Funktioner</h2><p>" + _features + "</p></div>";
 
-        str += "<div class='specs hidden'>specs</div>";
+        str += "<div class='specs hidden'>";
 
-        str += "<div class='config hidden'><p>" + _configuraion + "</p></div>";
+        str += "<h2>Specifikationer</h2><h3>Video</h3><table>";
+        foreach (specRow spec in _specs._video)
+        {
+            str += "<tr><th>" + spec._header + "</th><th>" + spec._detail + "</th></tr>";
+        }
+        str += "</table>";
 
-        str += "<div class='techdrawing hidden'>";
+        str += "<h3>Features</h3><table>";
+        foreach (specRow spec in _specs._features)
+        {
+            str += "<tr><th>" + spec._header + "</th><th>" + spec._detail + "</th></tr>";
+        }
+        str += "</table>";
+
+        str += "<h3>Network</h3><table>";
+        foreach (specRow spec in _specs._network)
+        {
+            str += "<tr><th>" + spec._header + "</th><th>" + spec._detail + "</th></tr>";
+        }
+        str += "</table>";
+
+        str += "<h3>Input / Output</h3><table>";
+        foreach (specRow spec in _specs._io)
+        {
+            str += "<tr><th>" + spec._header + "</th><th>" + spec._detail + "</th></tr>";
+        }
+        str += "</table>";
+
+        str += "<h3>Misc</h3><table>";
+        foreach (specRow spec in _specs._misc)
+        {
+            str += "<tr><th>" + spec._header + "</th><th>" + spec._detail + "</th></tr>";
+        }
+
+        str += "</table></div>";
+
+        str += "<div class='config hidden'><h2>Konfiguration</h2><p>" + _configuraion + "</p></div>";
+
+        str += "<div class='techdrawing hidden'><h2>Tekniske Tegninger</h2>";
         foreach (image img in _images)
         {
             if (!img._type)
@@ -217,7 +253,12 @@ public class product
         }
         str += "</div>";
 
-        str += "<div class='tilbehor hidden'>tilbehør</div>";
+        str += "<div class='tilbehor hidden'><h2>Tilbehør</h2>";
+
+        List<accessroie> accessories = accessroie.getAccessories(_accessories);
+        str += accessroie.displayAccessories(accessories);
+
+        str += "</div>";
 
         str += "</div>";
 
