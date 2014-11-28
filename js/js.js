@@ -13,7 +13,7 @@ window.Platform=window.Platform||{};window.logFlags=window.logFlags||{},function
     'user strict';
 
     window.onload = function () {
-        
+
         var query = window.location.href,
             nav = document.querySelectorAll('nav ul li');
 

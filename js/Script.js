@@ -2,7 +2,7 @@
     'user strict';
 
     window.onload = function () {
-        
+
         var query = window.location.href,
             nav = document.querySelectorAll('nav ul li');
 

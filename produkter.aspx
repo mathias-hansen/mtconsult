@@ -32,12 +32,43 @@
             </ul>
             <a class="buy" href="/how-to-buy.aspx">How To Buy</a>
         </aside>
-        <div class="page">
-            <div class="top"></div>
-            <div class="produkter">
+        <div id="S" class="page" runat="server">
+            <asp:Literal ID="litProductDescription" runat="server" />
+            <div class="top">
+                <asp:Literal ID="litTop" runat="server" />
+            </div>
+            <div id="S1" class="produkter" runat="server">
                 <asp:Literal ID="litContent" runat="server" />
             </div>
         </div>
     </div>
+    <script>
+        var infos = document.querySelectorAll('.top p');
+
+        if (infos !== null) {
+            for (var i = 0; i < infos.length; i++) {
+                infos[i].addEventListener('click', function () {
+                    selectProductInfo(this, infos);
+                });
+            }
+        }
+        function selectProductInfo(e, infos) {
+            var prodContents = document.querySelectorAll('.prodContent div'),
+                p = 0;
+
+            for (var i = 0; i < infos.length; i++) {
+                if (e === infos[i]) {
+                    p = i;
+                }
+                var Class = prodContents[i].getAttribute('class').match(/^\w+/);
+                prodContents[i].setAttribute('class', Class + ' hidden');
+
+                infos[i].removeAttribute('class');
+            }
+            var selfClass = prodContents[p].getAttribute('class').match(/^\w+/);
+            prodContents[p].setAttribute('class', selfClass);
+            e.setAttribute('class', 'selected');
+        }
+    </script>
 </asp:Content>
 

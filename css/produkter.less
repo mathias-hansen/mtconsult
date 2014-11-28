@@ -7,6 +7,10 @@
         ul li ul li a {
             color: white !important;
         }
+
+        ul li ul li.selected a {
+            color: #00c1cb !important;
+        }
     }
 
     .produkter {
@@ -48,6 +52,7 @@
             img {
                 position: absolute;
                 left: 1em;
+                width: 100px;
             }
 
             h3 {
@@ -66,7 +71,7 @@
 
             .buttons {
                 margin-top: 42px;
-                display: flex; 
+                display: flex;
                 justify-content: space-between;
                 width: 100%;
 
@@ -106,4 +111,154 @@
             }
         }
     }
+
+    .description {
+        background: url(/img/product-description.gif);
+        background-size: cover;
+        margin-bottom: 2em;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3em;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+
+        .text {
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 3em;
+            width: 52%;
+
+            h1 {
+                color: white;
+                margin: 0;
+                padding: 1em 0 .5em 0;
+            }
+
+            p {
+                color: white;
+                margin: 0;
+                padding: .5em 0;
+                margin-bottom: 25px;
+            }
+
+            .comp {
+                background: #22c2ce;
+                background: -moz-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#22c2ce),color-stop(100%,#038a9d));
+                background: -webkit-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: -o-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: -ms-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: linear-gradient(to bottom,#22c2ce 0%,#038a9d 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#22c2ce',endColorstr='#038a9d',GradientType=0);
+                color: #fff;
+                padding: 6px 14px;
+                text-decoration: none;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                margin-right: 1em;
+            }
+
+            .how {
+                color: #fff;
+                text-decoration: none;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                background: #b2b2b2;
+                background: -moz-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#b2b2b2),color-stop(100%,#7c7c7c));
+                background: -webkit-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+                background: -o-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+                background: -ms-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+                background: linear-gradient(to bottom,#b2b2b2 0%,#7c7c7c 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b2b2b2',endColorstr='#7c7c7c',GradientType=0);
+                padding: 0 0;
+                padding: 6px 14px;
+                margin: 21px 6px;
+            }
+        }
+
+        .images {
+            margin-top: 1em;
+
+            img {
+                width: 350px;
+            }
+
+            .select {
+                margin-bottom: 1em;
+                display: flex;
+                align-items: baseline;
+                justify-content: flex-end;
+
+                img {
+                    width: 70px;
+                    background: white;
+                    padding: 5px;
+                }
+
+                    img.selected {
+                        padding: 0;
+                        border: 5px solid #00c1cb;
+                    }
+            }
+        }
+    }
+
+    .top {
+        display: flex;
+        padding: 0 1.5em;
+
+        p {
+            -moz-border-radius: 3px 3px 0 0;
+            -webkit-border-radius: 3px 3px 0 0;
+            border-radius: 3px 3px 0 0;
+            background: #b2b2b2;
+            background: -moz-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+            background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#b2b2b2),color-stop(100%,#7c7c7c));
+            background: -webkit-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+            background: -o-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+            background: -ms-linear-gradient(top,#b2b2b2 0%,#7c7c7c 100%);
+            background: linear-gradient(to bottom,#b2b2b2 0%,#7c7c7c 100%);
+            filter: progid:DXImageTra;
+            padding: 11px 10px;
+            margin: 12px 10px 0 0;
+            color: rgba(0,0,0,0.7);
+        }
+
+            p.selected {
+                background: #22c2ce;
+                background: -moz-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#22c2ce),color-stop(100%,#038a9d));
+                background: -webkit-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: -o-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: -ms-linear-gradient(top,#22c2ce 0%,#038a9d 100%);
+                background: linear-gradient(to bottom,#22c2ce 0%,#038a9d 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#22c2ce',endColorstr='#038a9d',GradientType=0);
+                color: #fff;
+                padding: 11px 10px;
+                margin-top: 9px !important;
+                text-decoration: none;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+            }
+    }
+
+    .prodContent {
+        background: white;
+        div {
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
 }
