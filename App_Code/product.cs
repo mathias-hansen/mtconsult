@@ -120,13 +120,111 @@ public class product
 
         return prods;
     }
+
+    public string displayProds(List<product> prods)
+    {
+        int i = 0;
+        string std = string.Empty;
+        string dome = string.Empty;
+
+        foreach (product prod in prods)
+        {
+            if (!prod._dome)
+            {
+                std += prod.displayProd(i);
+            }
+            else
+            {
+                dome += prod.displayProd(i);
+            }
+            i++;
+        }
+
+        return "<div class='std'><h2>Standard Kameraer</h2>" + std + "</div><div class='dome'><h2>Dome Kameraer</h2>" + dome + "</div>";
+    }
+    public string displayProd(int i)
+    {
+        List<image> images = new List<image>();
+        string str = string.Empty;
+
+        foreach (image img in _images)
+        {
+            if (img._type)
+            {
+                images.Add(img);
+            }
+        }
+
+        str += "<div class='prod'>";
+
+        str += "<img src='" + images[0]._filename + "' />";
+
+        str += "<h3>" + _header + "</h3>";
+
+        str += "<p>" + _description + "</p>";
+
+        str += "<div class='buttons'><a href='/produkter.aspx?prod=" + i + "'>Læs mere</a><a href='/produkter.aspx/produkt-sammenligner?prod=" + i + "'>Sammenlign</a></div>";
+
+        return str += "</div>";
+    }
+
+    public string displayProdDescription(int p)
+    {
+        string str = string.Empty;
+
+        str += "<div class='description'>";
+        str += "<div class='text'><h1>" + _header + "</h1>";
+        str += "<p>" + _description + "</p><div><a class='comp' href='/produkter.aspx/produkt-sammenligner?prod=" + p + "'>Sammenlign</a><a class='how' href='/how-to-buy.aspx'>How To Buy</a></div></div>";
+        str += "<div class='images'><img src='" + _images[0]._filename + "' />";
+        str += "<div class='select'>";
+        for (int i = 0; i < _images.Count; i++)
+        {
+            if (_images[i]._type)
+            {
+                if (i == 0)
+                {
+                    str += "<img class='selected' src='" + _images[i]._filename + "' />";
+                }
+                else
+                {
+                    str += "<img src='" + _images[i]._filename + "' />";
+                }
+            }
+        }
+        str += "</div></div></div>";
+
+        return str;
+    }
+    public string displayProdContent()
+    {
+        string str = string.Empty;
+
+        str += "<div class='prodContent'>";
+
+        str += "<div class='features'><p>" + _features + "</p></div>";
+
+        str += "<div class='specs hidden'>specs</div>";
+
+        str += "<div class='config hidden'><p>" + _configuraion + "</p></div>";
+
+        str += "<div class='techdrawing hidden'>";
+        foreach (image img in _images)
+        {
+            if (!img._type)
+            {
+                str += "<img src='/img/prods/" + img._filename + "' />";
+            }
+        }
+        str += "</div>";
+
+        str += "<div class='tilbehor hidden'>tilbehør</div>";
+
+        str += "</div>";
+
+        return str;
+    }
 }
 
-public class image
-{
-    public string _filename { get; set; }
-    public bool _type { get; set; }
-}
 public class specifications
 {
     public List<specRow> _video { get; set; }
@@ -140,16 +238,17 @@ public class specRow
     public string _header { get; set; }
     public string _detail { get; set; }
 }
+
 public class resolutions
-{ 
-    public Dictionary<int, int> list =  new Dictionary<int, int>();
+{
+    public Dictionary<int, int> list = new Dictionary<int, int>();
     public resolutions()
-	{
+    {
         list.Add(0, 10);
         list.Add(1, 20);
         list.Add(2, 31);
         list.Add(3, 36);
         list.Add(4, 50);
         list.Add(5, 120);
-	}
+    }
 }

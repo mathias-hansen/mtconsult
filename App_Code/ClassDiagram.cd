@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="accessroie">
+    <Position X="2.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJIAAAAACAAEAEAAAAAAAAABAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>App_Code\accessories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="contact" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>App_Code\contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>App_Code\DataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="page">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAgAAAAABAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>App_Code\page.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="subpage">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAQAQAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>App_Code\page.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="product">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SgAgAAAAAAACgEwEABggAAAgAABAAAAAIgAAIQAAAAE=</HashCode>
+      <FileName>App_Code\product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="specifications" Collapsed="true">
+    <Position X="2.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAIAAABAAAAAAAAAABAAAAAAIAAAAAA=</HashCode>
+      <FileName>App_Code\product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="specRow" Collapsed="true">
+    <Position X="2.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="resolutions" Collapsed="true">
+    <Position X="2.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="slider" Collapsed="true">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\slider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="image" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\slider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

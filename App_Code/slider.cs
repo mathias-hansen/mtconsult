@@ -15,3 +15,9 @@ public class slider
         }
     }
 }
+
+public class image
+{
+    public string _filename { get; set; }
+    public bool _type { get; set; }
+}

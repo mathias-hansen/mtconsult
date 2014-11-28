@@ -18,15 +18,16 @@ public partial class om_os : System.Web.UI.Page
         string sub = Regex.Match(query, "/" + Regex.Replace(page._name, @"\s", "-") + @".aspx/[\w\d\-]+", RegexOptions.IgnoreCase).ToString();
         if (sub != "")
         {
-            subpage subpage = page._subpages[getSubpageId(query, page._subpages)];
-            getSubPage(subpage, page._name);
+            subpage subpage = new subpage();
+            subpage = page._subpages[subpage.getSubpageId(query, page._subpages)];
+            displaySubPage(subpage, page._name);
         }
         else
         {
-            getPage(page);
+            displayPage(page);
         }
     }
-    public void getPage(page page)
+    public void displayPage(page page)
     {
 
         litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(page._name, @"\s", "-").ToLower() + ".aspx'>" + page._name + "</a></bread-crumb>";
@@ -44,7 +45,7 @@ public partial class om_os : System.Web.UI.Page
         litContent.Text = page._content;
     }
 
-    public void getSubPage(subpage subpage, string pageName)
+    public void displaySubPage(subpage subpage, string pageName)
     {
         litBreadcrumb.Text = "<bread-crumb type='first'><a href='/hjem'>Hjem</a></bread-crumb><bread-crumb><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + ".aspx'>" + pageName + "</a></bread-crumb><bread-crumb type='last'><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + ".aspx/" + Regex.Replace(subpage._name, @"\s", "-").ToLower() + "'>" + subpage._name + "</a></bread-crumb>";
 
@@ -55,21 +56,7 @@ public partial class om_os : System.Web.UI.Page
         {
             litSubpages.Text += "<li><a href='/" + Regex.Replace(pageName, @"\s", "-").ToLower() + ".aspx/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "/" + Regex.Replace(subsubpage._name, @"\s", "-").ToLower() + "'>" + subsubpage._name + "</a></li>";
         }
-        litContent.Text = subpage._content;
-    }
-    public int getSubpageId(string query, List<subpage> subpages)
-    {
-        int id = -1;
-        int i = 0;
 
-        foreach (subpage subpage in subpages)
-        {
-            if (Regex.Match(query, subpage._name + "$").ToString() != "")
-            {
-                id = i;
-            }
-            i++;
-        }
-        return id;
+        litContent.Text = subpage._content;
     }
 }

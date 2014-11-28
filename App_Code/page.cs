@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 public class page
 {
@@ -44,6 +45,10 @@ public class subpage : page
     public int _parent { get; set; }
     public int _level { get; set; }
 
+    public subpage()
+    {
+
+    }
     public subpage(DataRow row, int id)
     {
         _name = row["name"].ToString();
@@ -69,5 +74,21 @@ public class subpage : page
         }
 
         return subpages;
+    }
+
+    public int getSubpageId(string query, List<subpage> subpages)
+    {
+        int id = -1;
+        int i = 0;
+
+        foreach (subpage subpage in subpages)
+        {
+            if (Regex.Match(query, subpage._name + "$").ToString() != "")
+            {
+                id = i;
+            }
+            i++;
+        }
+        return id;
     }
 }

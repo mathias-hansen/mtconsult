@@ -12,67 +12,28 @@ public partial class produkter : System.Web.UI.Page
     {
         List<product> prods = product.getProducts();
 
-        litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/produkter.aspx'>Produkter</a></bread-crumb>";
-        
-        displayProds(prods);
+        int prod = Convert.ToInt32(Request.QueryString["prod"]);
 
-        getNav(prods);
-
-        int i = 0;
-    }
-
-    public void displayProds(List<product> prods)
-    {
-        int i = 0;
-        string std = string.Empty;
-        string dome = string.Empty;
-
-        foreach (product prod in prods)
+        if (Request.QueryString["prod"] != null)
         {
-            if (!prod._dome)
-            {
-                std += displayProd(prod, i);
-            }
-            else
-            {
-                dome += displayProd(prod, i);
-            }
-            i++;
+            litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb><a href='/produkter.aspx'>Produkter</a></bread-crumb><bread-crumb type='last'><a href='/produkter.aspx?prod=" + prod + "'>" + prods[prod]._header + "</a></bread-crumb>";
+            litTop.Text = "<p tabindex='0' class='selected'>Funktioner</p><p tabindex='0'>Specifikationer</p><p tabindex='0'>Konfiguration</p><p tabindex='0'>Tekniske Tegninger</p><p tabindex='0'>Tilbehør</p>";
+
+            S.Attributes.Add("style", "background-color: transparent");
+            S1.Attributes.Add("style", "display: block; padding: 0");
+
+            litProductDescription.Text = prods[prod].displayProdDescription(prod);
+            litContent.Text = prods[prod].displayProdContent();
+
+            getNav(prods, prods[prod]);
         }
-
-        litContent.Text += "<div class='std'><h2>Standard Kameraer</h2>" + std + "</div><div class='dome'><h2>Dome Kameraer</h2>" + dome + "</div>";
-    }
-    public string displayProd(product prod, int i)
-    {
-        List<image> images = new List<image>();
-        List<image> techImages = new List<image>();
-        string strProd = string.Empty;
-
-        foreach (image img in prod._images)
+        else
         {
-            if (img._type)
-            {
-                images.Add(img);
-            }
-            else
-            {
-                techImages.Add(img);
-            }
+            litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/produkter.aspx'>Produkter</a></bread-crumb>";
+            litContent.Text = prods[0].displayProds(prods);
+
+            getNav(prods);
         }
-
-        strProd += "<div class='prod'>";
-
-        strProd += "<img src='" + images[0]._filename + "' />";
-
-        strProd += "<h3>" + prod._header + "</h3>";
-
-        strProd += "<p>" + prod._description + "</p>";
-
-        strProd += "<div class='buttons'><a href='/produkter.aspx?prod=" + i + "'>Læs mere</a><a href='/produkter.aspx/produkt-sammenligner?prod=" + i + "'>Sammenlign</a></div>";
-
-        // compare link
-
-        return strProd += "</div>";
     }
 
     public void getNav(List<product> prods)
@@ -87,6 +48,36 @@ public partial class produkter : System.Web.UI.Page
             else
             {
                 litDome.Text += "<li><a href='/produkter.aspx?prod=" + i + "'>" + prod._header + "</a></li>";
+            }
+            i++;
+        }
+    }
+    public void getNav(List<product> prods, product self)
+    {
+        int i = 0;
+        foreach (product prod in prods)
+        {
+            if (prod == self)
+            {
+                if (!prod._dome)
+                {
+                    litStd.Text += "<li class='selected'><a href='/produkter.aspx?prod=" + i + "'>" + prod._header + "</a></li>";
+                }
+                else
+                {
+                    litDome.Text += "<li class='selected'><a href='/produkter.aspx?prod=" + i + "'>" + prod._header + "</a></li>";
+                }
+            }
+            else
+            {
+                if (!prod._dome)
+                {
+                    litStd.Text += "<li><a href='/produkter.aspx?prod=" + i + "'>" + prod._header + "</a></li>";
+                }
+                else
+                {
+                    litDome.Text += "<li><a href='/produkter.aspx?prod=" + i + "'>" + prod._header + "</a></li>";
+                }
             }
             i++;
         }
