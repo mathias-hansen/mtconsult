@@ -27,6 +27,15 @@ public partial class produkter : System.Web.UI.Page
 
             getNav(prods, prods[prod]);
         }
+        else if (Request.QueryString["tilbehør"] != null)
+        {
+            S1.Attributes.Add("style", "flex-direction: column;align-items: baseline");
+            tilbehor.Attributes.Add("class", "selected");
+
+            litContent.Text = "<h2 style='width:73%; margin: .7em 100px'>Tilbehør</h2>" + accessroie.displayAccessories(accessroie.getAccessories());
+            
+            getNav(prods);
+        }
         else
         {
             litBreadcrumb.Text = "<bread-crumb type='first'><a href='/default.aspx'>Hjem</a></bread-crumb><bread-crumb type='last'><a href='/produkter.aspx'>Produkter</a></bread-crumb>";

@@ -26,9 +26,9 @@
                         <asp:Literal ID="litDome" runat="server" />
                     </ul>
                 </li>
-                <li><a href="/produkter.aspx/iq-software">IQ Software</a></li>
-                <li><a href="/produkter.aspx/tilbehør">tilbehør</a></li>
-                <li><a href="/produkter.aspx/produkt-sammenligner">Produkt sammenligner</a></li>
+                <li><a href="/produkter.aspx?iq-software=0">IQ Software</a></li>
+                <li id="tilbehor" runat="server"><a href="/produkter.aspx?tilbehør=0">tilbehør</a></li>
+                <li><a href="/produkter.aspx?produkt-sammenligner=0">Produkt sammenligner</a></li>
             </ul>
             <a class="buy" href="/how-to-buy.aspx">How To Buy</a>
         </aside>
